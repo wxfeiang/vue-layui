@@ -6,7 +6,7 @@ import IndexHome from "@/components/IndexHome";
 
 //
 import list1 from "@/components/Body/list1";
-
+import FoundList from "@/components/FoundList";
 Vue.use(Router);
 
 export default new Router({
@@ -24,14 +24,18 @@ export default new Router({
       component: Nofind
     },
     {
-      path: "/index",
-      name: "/index",
-      component: IndexHome
-    },
-    {
       path: "/list1",
       name: "/list1",
       component: list1
+    },
+    {
+      path: "/index",
+      name: "index",
+      component: IndexHome,
+      children: [
+        { path: "", component: FoundList },
+        { path: "/foundlist", name: "foundlist", component: FoundList }
+      ]
     }
   ]
 });
