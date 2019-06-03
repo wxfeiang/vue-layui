@@ -4,29 +4,48 @@
       <div class="layui-side-scroll">
         <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
         <ul class="layui-nav layui-nav-tree" lay-filter="test">
-          <li class="layui-nav-item layui-nav-itemed">
-            <a class="" href="javascript:;">所有商品</a>
+          <li class="layui-nav-item layui-nav-itemed" v-for="item in items">
+            <a
+              class=""
+              href="javascript:; "
+              v-if="item.children"
+              :index="item.path"
+              :key="item.path"
+              >{{ item.name }}</a
+            >
             <dl class="layui-nav-child">
-              <dd>
-                <router-link to="list1" class="nav-link">菜单</router-link>
+              <dd v-for="citem in item.children">
+                <router-link :to="citem.path" class="nav-link">
+                  {{ citem.name }}
+                </router-link>
               </dd>
-              <dd><a href="javascript:;">列表二</a></dd>
-              <dd><a href="javascript:;">列表三</a></dd>
-              <dd><a href="">超链接</a></dd>
             </dl>
           </li>
-          <li class="layui-nav-item">
-            <a href="javascript:;">解决方案</a>
-            <dl class="layui-nav-child">
-              <dd><a href="javascript:;">列表一</a></dd>
-              <dd><a href="javascript:;">列表二</a></dd>
-              <dd><a href="">超链接</a></dd>
-            </dl>
-          </li>
-          <li class="layui-nav-item"><a href="">云市场</a></li>
-          <li class="layui-nav-item"><a href="">发布商品</a></li>
         </ul>
       </div>
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: "leftmenu",
+  data() {
+    return {
+      items: [
+        {
+          icon: "fa-money",
+          name: "资金管理",
+          path: "fund",
+          children: [{ path: "foundlist", name: "资金流水" }]
+        },
+        {
+          icon: "fa-asterisk",
+          name: "信息管理",
+          path: "info",
+          children: [{ path: "infoshow", name: "个人信息" }]
+        }
+      ]
+    };
+  }
+};
+</script>

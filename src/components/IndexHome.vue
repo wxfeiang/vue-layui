@@ -3,7 +3,12 @@
     <div class="layui-layout layui-layout-admin">
       <InHeader />
       <InLeft />
-      <InBody />
+      <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+          <router-view></router-view>
+        </div>
+      </div>
       <Infooter />
     </div>
   </div>
