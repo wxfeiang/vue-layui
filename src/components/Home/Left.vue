@@ -4,7 +4,12 @@
       <div class="layui-side-scroll">
         <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
         <ul class="layui-nav layui-nav-tree" lay-filter="test">
-          <li class="layui-nav-item layui-nav-itemed" v-for="item in items">
+          <li class="layui-nav-item layui-nav-itemed">
+            <router-link to="/consopanel" class="nav-link">
+              控制台
+            </router-link>
+          </li>
+          <li class="layui-nav-item" v-for="item in items">
             <a
               class=""
               href="javascript:; "

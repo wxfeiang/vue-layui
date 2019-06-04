@@ -37,7 +37,6 @@
               lay-submit
               lay-filter="formDemo"
               type="button"
-              @click="login"
             >
               立即提交
             </button>
@@ -70,6 +69,7 @@ export default {
         layer.msg("登录成功");
         this.msg = JSON.stringify(data.field);
         console.log(this.msg);
+        login();
         return false;
         //阻止表单跳转;
       });
