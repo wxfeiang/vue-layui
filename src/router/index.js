@@ -4,9 +4,11 @@ import Login from "@/components/Login";
 import Nofind from "@/components/Nofind";
 import IndexHome from "@/components/IndexHome";
 
+
 //body luyou
 import Consopanel from "@/components/Body/Consopanel";
 
+import Infoshow from "@/components/Body/infoshow";
 Vue.use(Router);
 
 export default new Router({
@@ -29,7 +31,8 @@ export default new Router({
       component: IndexHome,
       children: [
         { path: "", name: "Consopanel", component: Consopanel },
-        { path: "/Consopanel", name: "Consopanel", component: Consopanel }
+        { path: "/Consopanel", name: "Consopanel", component: Consopanel },
+    { path: "/infoshow", name: "infoshow", component: Infoshow }
       ]
     }
   ]

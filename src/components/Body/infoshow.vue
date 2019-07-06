@@ -1,5 +1,5 @@
 <template>
   <div class="lost">
-    list1ssssssss
+    ingggggg
   </div>
 </template>

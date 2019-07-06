@@ -41,13 +41,13 @@ export default {
           icon: "fa-money",
           name: "资金管理",
           path: "fund",
-          children: [{ path: "foundlist", name: "资金流水" }]
+          children: [{ path: "/Consopanel", name: "资金流水" }]
         },
         {
           icon: "fa-asterisk",
           name: "信息管理",
           path: "info",
-          children: [{ path: "infoshow", name: "个人信息" }]
+          children: [{ path: "/infoshow", name: "个人信息" }]
         }
       ]
     };
